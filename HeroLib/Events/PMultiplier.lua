@@ -128,7 +128,7 @@ HL:RegisterForSelfCombatEvent(
     if Dot then
       Dot.Applied = true
     else
-      ListenedSpell.Units[DestGUID] = { PMultiplier = 0, Time = GetTime(), Applied = true }
+      ListenedSpell.Units[DestGUID] = { PMultiplier = 1, Time = GetTime(), Applied = true }
     end
   end,
   "SPELL_AURA_APPLIED", "SPELL_AURA_REFRESH"
