@@ -128,7 +128,20 @@ HL:RegisterForSelfCombatEvent(
     if Dot then
       Dot.Applied = true
     else
-      ListenedSpell.Units[DestGUID] = { PMultiplier = 1, Time = GetTime(), Applied = true }
+      -- Hardcoded PMultiplier for Improved Garrote with Indiscriminate Carnage
+      -- Indiscriminate Carnage applies Garrote to off-targets before the primary target
+      -- SPELL_CAST_SUCCESS is also called after the off-targets receive the Garrote effect,
+      -- so we can't just check the ListenedSpell table.
+      local PMult = 1
+      local Class = Player:Class()
+      if Class == "Rogue" then
+        local S = HeroLib.Spell.Rogue.Assassination
+        if S.ImprovedGarrote:IsAvailable() and SpellID == S.Garrote:ID() 
+            and (Player:BuffUp(S.ImprovedGarroteAura, nil, true) or Player:BuffUp(S.ImprovedGarroteBuff, nil, true)) then
+          PMult = 1.5
+        end
+      end
+      ListenedSpell.Units[DestGUID] = { PMultiplier = PMult, Time = GetTime(), Applied = true }
     end
   end,
   "SPELL_AURA_APPLIED", "SPELL_AURA_REFRESH"
