@@ -19,7 +19,6 @@ local GetTime        = GetTime
 local ListenedSpells = {}
 local ListenedAuras  = {}
 
-
 --- ============================ CONTENT ============================
 -- Register a spell to watch and his multipliers.
 -- Examples:
@@ -134,12 +133,12 @@ HL:RegisterForSelfCombatEvent(
       -- so we can't just check the ListenedSpell table.
       local PMult = 1
       local Class = Player:Class()
-      if Class == "Rogue" then
-        local S = HeroLib.Spell.Rogue.Assassination
-        if S.ImprovedGarrote:IsAvailable() and SpellID == S.Garrote:ID() 
-            and (Player:BuffUp(S.ImprovedGarroteAura, nil, true) or Player:BuffUp(S.ImprovedGarroteBuff, nil, true)) then
-          PMult = 1.5
-        end
+      local S = HeroLib.Spell.Rogue.Assassination
+      if Class == "Rogue" and S.ImprovedGarrote:IsAvailable() and SpellID == S.Garrote:ID() 
+          and (Player:BuffUp(S.ImprovedGarroteAura, nil, true) or Player:BuffUp(S.ImprovedGarroteBuff, nil, true)) then
+        PMult = 1.5
+      else
+        PMult = ComputePMultiplier(ListenedSpell)
       end
       ListenedSpell.Units[DestGUID] = { PMultiplier = PMult, Time = GetTime(), Applied = true }
     end
