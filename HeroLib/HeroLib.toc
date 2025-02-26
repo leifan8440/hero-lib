@@ -1,8 +1,8 @@
-## Interface: 110007
+## Interface: 110100
 
 ## Title: Hero|cFFA330C9Lib|r
 ## Author: HeroTC, Aethys
-## Version: 11.0.7.02
+## Version: 11.1.0.01
 ## Notes: Core Library used by HeroTC Addons. Can be used by others 3rd-Party Addons.
 
 ## DefaultState: Enabled
