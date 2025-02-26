@@ -91,16 +91,17 @@ local ButtonByAddOn = {
     [1] = { "BT4Button", "CLICK BT4Button%i:LeftButton" },
   },
   Blizzard = {
+    -- Note: These are ordered by the bars as shown in-game.
     [1]  = { "ActionButton",              "ACTIONBUTTON%i" },
-    [2]  = { "ActionButton",              nil },
+    [6]  = { "MultiBarBottomLeftButton",  "MULTIACTIONBAR1BUTTON%i" },
+    [5]  = { "MultiBarBottomRightButton", "MULTIACTIONBAR2BUTTON%i" },
     [3]  = { "MultiBarRightButton",       "MULTIACTIONBAR3BUTTON%i" },
     [4]  = { "MultiBarLeftButton",        "MULTIACTIONBAR4BUTTON%i" },
-    [5]  = { "MultiBarBottomRightButton", "MULTIACTIONBAR2BUTTON%i" },
-    [6]  = { "MultiBarBottomLeftButton",  "MULTIACTIONBAR1BUTTON%i" },
-    [7]  = { "ActionButton",              nil },
-    [8]  = { "ActionButton",              nil },
-    [9]  = { "ActionButton",              nil },
-    [10] = { "ActionButton",              nil },
+    [2]  = { "MultiBar5Button",           "MULTIACTIONBAR5BUTTON%i" },
+    [7]  = { "MultiBar6Button",           "MULTIACTIONBAR6BUTTON%i" },
+    [8]  = { "MultiBar7Button",           "MULTIACTIONBAR7BUTTON%i" },
+    [9]  = { "MultiBar8Button",           "MULTIACTIONBAR8BUTTON%i" },
+    [10] = { "MultiBar9Button",           "MULTIACTIONBAR9BUTTON%i" },
   },
   Dominos = {
     [1]  = { "ActionButton",              "ACTIONBUTTON%i"                         },
@@ -143,14 +144,7 @@ local function GetButtonInfo(ActionSlot, Blizzard)
   if Blizzard then
     -- Blizzard
     ButtonBaseName = ButtonByAddOn.Blizzard[BarIndex][1]
-
-    if BarIndex >= 3 or BarIndex <= 6 then
-      -- Bar 3 to 6: MultiBarXXXButton
-      ButtonSlot = BarSlot
-    else
-      -- Bar 1 to 2 and 7 to 10: ActionButton
-      ButtonSlot = ActionSlot
-    end
+    ButtonSlot = BarSlot
   elseif _G.Bartender4 then
     -- Bartender
     ButtonBaseName = ButtonByAddOn.Bartender[1][1]
