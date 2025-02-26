@@ -84,9 +84,9 @@ HL.Action = Action
 -- 145..156        = MultiBar5Button              MULTIACTIONBAR5BUTTON..BarSlot /
 -- 157..168        = MultiBar6Button              MULTIACTIONBAR6BUTTON..BarSlot /
 -- 169..180        = MultiBar7Button              MULTIACTIONBAR7BUTTON..BarSlot /
--- Where ActionSlot is in 1..132 and BarSlot is in 1..12 for MULTIACTIONBARs.
+-- Where ActionSlot is in 1..180 and BarSlot is in 1..12 for MULTIACTIONBARs.
 -- Technically, ACTIONBUTTON commands above 12 are not bindables by default (hence why Dominos use virtual bars for those).
--- We ignore Slots from 121 to 132 because these aren't controlled by the player (Possess bar).
+-- We ignore Slots from 121 to 144 because these aren't controlled by the player (Skyriding and Possess bars).
 
 local ButtonByAddOn = {
   Bartender = {
