@@ -130,7 +130,19 @@ local ButtonByAddOn = {
 } -- { [AddOn] = { [BarIndex] = { [1] = ButtonBaseName, [2] = CommandNameFormat } } }
 
 local function GetBarInfo(ActionSlot)
-  local BarIndex = mathceil(ActionSlot / 12)
+  -- Blizzard default bars 6 through 8 are offset to ActionSlots 145 through 180.
+  local BarIndex
+  if ActionSlot >= 145 and ActionSlot <= 156 then
+    BarIndex = 2
+  elseif ActionSlot >= 157 and ActionSlot <= 168 then
+    BarIndex = 7
+  elseif ActionSlot >= 169 and ActionSlot <= 180 then
+    BarIndex = 8
+  elseif ActionSlot >= 121 and ActionSlot <= 144 then
+    BarIndex = 10 -- Dummy just to avoid errors for these slots.
+  else
+    BarIndex = mathceil(ActionSlot / 12)
+  end
   local BarSlot = ActionSlot % 12
   if BarSlot == 0 then BarSlot = 12 end
 
@@ -301,7 +313,7 @@ end
 
 local function UpdateAction(ActionSlot)
   -- Prevent update for other actions than the one from ability bars.
-  if not ActionSlot or ActionSlot <= 0 or ActionSlot > 120 then return end
+  if not ActionSlot or ActionSlot <= 0 or ActionSlot > 180 then return end
 
   -- Clear the action info cached from the previous update.
   ClearAction(ActionSlot)
@@ -357,7 +369,7 @@ HL:RegisterForEvent(function(Event, ActionSlot) UpdateAction(ActionSlot) end, "A
 
 HL:RegisterForEvent(
   function()
-    for i = 1, 120 do
+    for i = 1, 180 do
       UpdateAction(i)
     end
   end,
