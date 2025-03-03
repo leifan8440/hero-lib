@@ -122,7 +122,7 @@ do
     if SpellType and type(SpellType) ~= "string" then error("Invalid Spell Type.") end
 
     -- Attributes
-    if SpellID >= 999900 then
+    if SpellID >= 999900 and SpellID < 1000000 then
       self.SpellID = SpellID
       self.SpellType = "Player"
       self.SpellName = "Custom Spell Entry"
