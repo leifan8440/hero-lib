@@ -241,7 +241,7 @@ HL:RegisterForEvent(
                   end
                 end
               end
-              if (ActiveTalent and TalentRank > 0) then
+              if ActiveTalent and TalentRank and TalentRank > 0 then
                 local TalentEntryID = ActiveTalent.entryID
                 local TalentEntryInfo = GetEntryInfo(TalentConfigID, TalentEntryID)
                 -- There are entries for SubTree (Hero Talents) items, as of TWW.
@@ -251,8 +251,10 @@ HL:RegisterForEvent(
                   local DefinitionID = TalentEntryInfo["definitionID"]
                   local DefinitionInfo = GetDefinitionInfo(DefinitionID)
                   local SpellID = DefinitionInfo["spellID"]
-                  local SpellName = GetSpellInfo(SpellID)
-                  Cache.Persistent.Talents[SpellID] = (Cache.Persistent.Talents[SpellID]) and (Cache.Persistent.Talents[SpellID] + TalentRank) or TalentRank
+                  if SpellID then
+                    local SpellName = GetSpellInfo(SpellID)
+                    Cache.Persistent.Talents[SpellID] = (Cache.Persistent.Talents[SpellID]) and (Cache.Persistent.Talents[SpellID] + TalentRank) or TalentRank
+                  end
                 end
               end
             end
