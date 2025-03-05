@@ -358,6 +358,7 @@ do
     [218717] = true, -- Forged Gladiator's Sigil of Adaptation
     [219381] = true, -- Fate Weaver
     [219931] = true, -- Algari Competitor's Medallion
+    [228844] = true, -- Test Pilot's Go-Pack
     -- TWW Engineering Epic Quality Wrists
     [221805] = true,
     [221806] = true,
