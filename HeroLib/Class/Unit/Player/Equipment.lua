@@ -359,6 +359,7 @@ do
     [219381] = true, -- Fate Weaver
     [219931] = true, -- Algari Competitor's Medallion
     [228844] = true, -- Test Pilot's Go-Pack
+    [230193] = true, -- Mister Lock-N-Stalk
     -- TWW Engineering Epic Quality Wrists
     [221805] = true,
     [221806] = true,
