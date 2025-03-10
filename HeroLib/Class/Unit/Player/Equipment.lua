@@ -360,6 +360,7 @@ do
     [219931] = true, -- Algari Competitor's Medallion
     [228844] = true, -- Test Pilot's Go-Pack
     [230193] = true, -- Mister Lock-N-Stalk
+    [235224] = true, -- Mekgineer's Mindbending Headgear
     -- TWW Engineering Epic Quality Wrists
     [221805] = true,
     [221806] = true,
