@@ -435,6 +435,7 @@ do
     -- The War Within
     ConcoctionKissofDeath           = Item(215174, {13, 14}),
     FoulBehemothsChelicera          = Item(219915, {13, 14}),
+    JunkmaestrosMegaMagnet          = Item(230189, {13, 14}),
     KahetiEmblem                    = Item(225651, {13, 14}),
     SwarmlordsAuthority             = Item(212450, {13, 14}),
   }
@@ -446,6 +447,7 @@ do
     SkeweringColdDebuff             = Spell(388929),
     -- The War Within
     ConcoctionKissofDeathBuff       = Spell(435493),
+    JunkmaestrosBuff                = Spell(1219661),
     KahetiEmblemBuff                = Spell(455464),
   }
 
@@ -498,6 +500,10 @@ do
     -- The War Within items being excluded with custom checks.
     if ItemID == CustomItems.ConcoctionKissofDeath:ID() then
       return Player:BuffUp(CustomItemSpells.ConcoctionKissofDeathBuff)
+    end
+
+    if ItemID == CustomItems.JunkmaestrosMegaMagnet:ID() then
+      return Player:BuffDown(CustomItemSpells.JunkmaestrosBuff)
     end
 
     if ItemID == CustomItems.KahetiEmblem:ID() then
