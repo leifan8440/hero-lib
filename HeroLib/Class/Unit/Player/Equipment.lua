@@ -360,7 +360,10 @@ do
     [219931] = true, -- Algari Competitor's Medallion
     [228844] = true, -- Test Pilot's Go-Pack
     [230193] = true, -- Mister Lock-N-Stalk
+    [235222] = true, -- Apogee Invengor's Goggles
+    [235223] = true, -- Psychogenic Prognosticator's Lenses
     [235224] = true, -- Mekgineer's Mindbending Headgear
+    [235226] = true, -- Inventor's Ingenious Trifocals
     -- TWW Engineering Epic Quality Wrists
     [221805] = true,
     [221806] = true,
