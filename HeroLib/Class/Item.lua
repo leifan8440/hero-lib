@@ -257,6 +257,13 @@ function Item:HasUseBuff()
   return self:IsUsable() and self:HasStatAnyDps()
 end
 
+-- trinket.foo.has_use_damage
+-- Note: This assumes all non-stat trinkets and trinkets with no buff duration are damage trinkets.
+-- Note: May not be fully accurate.
+function Item:HasUseDamage()
+  return self:IsUsable() and not self:HasStatAnyDps() and self:BuffDuration() == 0
+end
+
 -- buff.potion.duration
 function Item:BuffDuration()
   if not self:IsUsable() then return 0 end
