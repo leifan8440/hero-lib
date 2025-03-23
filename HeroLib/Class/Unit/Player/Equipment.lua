@@ -436,10 +436,12 @@ do
     GlobeofJaggedIce                = Item(193732, {13, 14}),
     TreemouthsFesteringSplinter     = Item(193652, {13, 14}),
     -- The War Within
+    ChromebustibleBombSuit          = Item(230029, {13, 14}),
     ConcoctionKissofDeath           = Item(215174, {13, 14}),
     FoulBehemothsChelicera          = Item(219915, {13, 14}),
     JunkmaestrosMegaMagnet          = Item(230189, {13, 14}),
     KahetiEmblem                    = Item(225651, {13, 14}),
+    RingingRitualMud                = Item(232543, {13, 14}),
     SwarmlordsAuthority             = Item(212450, {13, 14}),
   }
 
@@ -513,7 +515,7 @@ do
       return Player:BuffStack(CustomItemSpells.KahetiEmblemBuff) < 4 and not (Player:BuffUp(CustomItemSpells.KahetiEmblemBuff) and Player:BuffRemains(CustomItemSpells.KahetiEmblemBuff) < 3) or Player:BuffDown(CustomItemSpells.KahetiEmblemBuff)
     end
 
-    if ItemID == CustomItems.SwarmlordsAuthority:ID() or ItemID == CustomItems.FoulBehemothsChelicera:ID() then
+    if ItemID == CustomItems.SwarmlordsAuthority:ID() or ItemID == CustomItems.FoulBehemothsChelicera:ID() or ItemID == CustomItems.RingingRitualMud:ID() or ItemID == CustomItems.ChromebustibleBombSuit:ID() then
       return not (Player:IsTankingAoE(8) or Player:IsTanking(Target))
     end
 
