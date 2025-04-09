@@ -563,6 +563,8 @@ function Splash.RegisterNucleusAbilities()
   -- Warlock
   -- Afflication
   RegisterNucleusAbility("DirectDamage", 27285, 10)               -- Seed Explosion
+  RegisterNucleusAbility("DirectDamage", 386997, 10)              -- Soul Rot
+  RegisterNucleusAbility("DirectDamage", 386931, 10)              -- Vile Taint
   -- Demonology
   RegisterNucleusAbility("DirectDamage", 89753, 8)                -- Felstorm (Felguard)
   RegisterNucleusAbility("GroundDirectDamage", 386609, 8)         -- Guillotine's Fel Explosion
