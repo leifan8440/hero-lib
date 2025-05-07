@@ -376,6 +376,12 @@ function Spell:IsInFlight()
   return GetTime() < self.LastHitTime
 end
 
+-- action.foo.in_flight_remains
+function Spell:InFlightRemains()
+  local FlightTimeRemaining = self:TravelTime() - self:TimeSinceLastCast()
+  return FlightTimeRemaining > 0 and FlightTimeRemaining or 0
+end
+
 -- Get the override spell ID for the current spell (for talents that replace abilities)
 -- API Documentation: https://warcraft.wiki.gg/wiki/API_C_Spell.GetOverrideSpell
 function Spell:GetOverrideSpell(SpecOverride, OnlyKnown, IgnoreOverrideSpellID)
