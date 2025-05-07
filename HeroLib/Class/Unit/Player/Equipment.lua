@@ -220,6 +220,7 @@ local GladiatorBadges = {
   216279, -- Draconic
   -- TWW Badges
   218713, -- Forged
+  229780, -- Prized
 }
 
 -- Usable items that may not become active until an event or threshold.
