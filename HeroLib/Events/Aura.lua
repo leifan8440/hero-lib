@@ -118,7 +118,7 @@ end
 
 do
   local function SpellRegisterError(ErrorSpell)
-    return "You forgot to register the spell: " .. ErrorSpell:Name() or ErrorSpell:ID() .. " in RegisterAura handler."
+    return "You forgot to register the spell: " .. (ErrorSpell:Name() or ErrorSpell:ID()) .. " in RegisterAura handler."
   end
 
   local function GetAuraUnit(Units, GUID)
