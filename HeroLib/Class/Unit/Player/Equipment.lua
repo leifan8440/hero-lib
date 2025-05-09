@@ -365,6 +365,7 @@ do
     [235223] = true, -- Psychogenic Prognosticator's Lenses
     [235224] = true, -- Mekgineer's Mindbending Headgear
     [235226] = true, -- Inventor's Ingenious Trifocals
+    [237494] = true, -- Hallowed Tome
     [237495] = true, -- Baleful Excerpt
     -- TWW Engineering Epic Quality Wrists
     [221805] = true,
