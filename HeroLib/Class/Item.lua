@@ -249,6 +249,10 @@ end
 -- trinket.foo.has_stat.any_dps
 function Item:HasStatAnyDps()
   if not self:OnUseSpell() then return false end
+  -- Note: This is a temporary override. We need to check to ensure SpellAuraStat is actually working properly.
+  -- Note: This is for Signet of the Priory. It uses SpellID 443531, which is false in SpellAuraStat due to it using sub_type 4 in SpellEffect.
+  -- Note: This needs further research...
+  if self:ID() == 219308 then return true end
   return DBC.SpellAuraStat[self:OnUseSpell():ID()]
 end
 
